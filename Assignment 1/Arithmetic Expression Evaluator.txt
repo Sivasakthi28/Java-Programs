@@ -1,0 +1,24 @@
+2. Arithmetic Expression Evaluator
+Problem:
+Write a program that takes three numbers from the user: two integers and one double.
+Perform and display the results of the following:
+• Addition, Subtraction, Multiplication, and Division between the integers.
+• Multiply the result of the addition with the double value.
+• Ensure proper type casting is used wherever necessary.
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        double c=sc.nextDouble();
+        int d=a+b, e=a-b, f=a*b, g=a/b;
+        System.out.println(d);
+        System.out.println(e);
+        System.out.println(f);
+        System.out.println(g);
+        double h=d*c;
+        System.out.println(h);
+    }
+}

@@ -1,0 +1,40 @@
+5. Anagram Check
+Problem: Check if two strings are anagrams of each other.
+Input Format: Two strings on separate lines
+Output Format: &quot;Anagrams&quot; or &quot;Not Anagrams&quot;
+Constraints: Only lowercase letters, no spaces
+Sample Input:
+listen\nsilent
+Sample Output:
+Anagrams
+
+package Sakthi;
+import java.util.*;
+class Hello {
+    public static void main(String[] args) {
+    	Scanner sc=new Scanner(System.in);
+    	String str1=sc.nextLine();
+        String str2=sc.nextLine();
+        int count=0;
+        boolean[] v=new boolean[str2.length()];
+        if(str1.length()!=str2.length()) {
+            System.out.println("Not Anagrams");
+            return;
+        }
+        for(int i=0;i<str1.length();i++) {
+        	for(int j=0;j<str1.length();j++) {
+        		if(str1.charAt(i)==str2.charAt(j)&&!v[j]) {
+        			count++;
+        			v[j]=true;
+        			break;
+        	    }
+        	}
+        }
+        if(count==str1.length()) {
+        	System.out.println("Anagrams");
+        }
+        else {
+        	System.out.println("Not a Anagrams");
+        }
+    }
+}

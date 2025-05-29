@@ -1,0 +1,29 @@
+2. Count Vowels and Consonants
+Problem: Count the number of vowels and consonants in the input string.
+Input Format: A single line containing a string (may have spaces)
+Output Format: Vowels: X, Consonants: Y
+Constraints: Input will only contain alphabetic characters and spaces
+Sample Input:
+Java Programming
+Sample Output:
+Vowels: 5, Consonants: 10
+
+package Sakthi;
+import java.util.*;
+class Hello {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String str1=sc.nextLine();
+		int v=0,c=0;
+		for(int i=0;i<str1.length();i++) {
+		if(str1.charAt(i)=='a'||str1.charAt(i)=='e'||str1.charAt(i)=='i'||str1.charAt(i)=='o'||str1.charAt(i)=='u') {
+			v++;
+		}
+		else if(str1.charAt(i)!=' '){
+			c++;
+		}
+		}
+		System.out.println("Number of Vowels:"+v);
+		System.out.println("Number of Consonants:"+c);
+	}
+} 

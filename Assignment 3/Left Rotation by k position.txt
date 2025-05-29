@@ -1,0 +1,39 @@
+3.Left Rotation by K Position
+Problem Statement:
+Write a program to perform left rotation of a 1D array by k position.
+Input:
+• irst line: Integer n — the size of the array
+• Second line: n space-separated integers — the elements of the array
+• Third line: Integer k — number of positions to rotate the array to the left
+Output:
+• A single line containing the rotated array elements after k left rotations.
+Constraints:
+• 1 &lt;= n &lt;= 100
+• -10^4 &lt;= arr[i] &lt;= 10^4
+• 0 &lt;= k &lt;= 100
+Sample Input:
+6
+1 2 3 4 5 6
+2
+Sample Output:
+3 4 5 6 1 2
+
+package Sakthi;
+import java.util.Scanner;
+public class Hello {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt(); 
+        int[] arr=new int[n];
+        for(int i=0;i<n;i++) {
+            arr[i]=sc.nextInt();
+        }
+        int k=sc.nextInt();
+        for(int i=k;i<n;i++) {
+        	System.out.print(arr[i]+" ");
+        }
+        for(int i=0;i<k;i++) {
+            System.out.print(arr[i]+" ");
+        }
+    }
+}

@@ -1,0 +1,44 @@
+1. Search for an Element
+Problem Statement:
+Write a program to search for an element in the array. If found, print its index (0-based);
+otherwise, print &quot;Not found&quot;.
+Input:
+ First line: Integer n (size of the array)
+ Second line: n space-separated integers (array elements)
+ Third line: Integer x (element to search)
+Output:
+ Index of the first occurrence of x in the array, or &quot;Not found&quot;
+Constraints:
+ 1 &lt;= n &lt;= 100
+ -10^4 &lt;= arr[i], x &lt;= 10^4
+Sample Input:
+5
+3 8 2 9 6
+9
+Sample Output:
+3
+
+package Sakthi;
+import java.util.*;
+public class Hello {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+        int[] arr=new int[n];
+        for(int i=0;i<n;i++) {
+        	arr[i]=sc.nextInt();
+        }
+        int a=sc.nextInt();
+        boolean found = false;
+        for(int i=0;i<n;i++) {
+        	if(arr[i]==a) {
+        		System.out.print(i);
+        		found=true;
+        		break;
+        	}
+        }
+        if(!found) {
+        	System.out.print("Not Found");
+        }
+	}
+}

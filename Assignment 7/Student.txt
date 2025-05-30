@@ -1,0 +1,25 @@
+package Sakthi;
+public class Student {
+    int rollnumber;
+    String name;
+    Student(int rollnumber, String name){
+    	this.rollnumber=rollnumber;
+    	this.name=name;
+    }
+    Student(int rollnumber){
+    	this.rollnumber=rollnumber;
+    	this.name="Unknown";
+    }
+    void display() {
+    	System.out.println(rollnumber);
+    	System.out.println(name);
+    }
+	public static void main(String[] args) {
+		Student obj=new Student(102,"Sakthi");
+		System.out.println("Student 1: ");
+		obj.display();
+		Student obj1=new Student(101);
+		System.out.println("Student 2: ");
+		obj1.display();
+	}
+}

@@ -9,8 +9,9 @@ Java is simple. Java is powerful.\nJava
 Sample Output:
 2
 
+package Sakthi;
 import java.util.Scanner;
-public class Main {
+public class Hello {
  public static void main(String[] args) {
       Scanner sc = new Scanner(System.in);
       String sentence = sc.nextLine();
@@ -20,8 +21,8 @@ public class Main {
       for (String w : words) {
           if (w.equals(word)) {
           count++;
+          }
       }
-    }
    System.out.println(count);
  }
 }

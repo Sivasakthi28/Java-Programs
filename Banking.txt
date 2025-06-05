@@ -1,0 +1,85 @@
+package bank1;
+import java.util.Scanner;
+public class Bank1{
+    String name;
+    int accno;
+    int balance;
+    int withdraw,count;
+    int x,ch;
+    void getdata()
+    {
+       Scanner sc=new Scanner(System.in);
+       System.out.println("Enter the name:");
+       name=sc.nextLine();
+       System.out.println("Enter the accno:");
+       accno=sc.nextInt();
+       System.out.println("Enter the balance:");
+       balance=sc.nextInt();
+    try
+    {
+        if(balance<500){
+            System.out.println("Amount required");
+        }
+    }
+    catch(ArithmeticException e)
+    {
+     System.out.println("balance is not less than 500");
+    }
+    }
+    void withdrawal()
+    {
+        
+    withdraw=balance-x;
+    try
+    {
+        if(withdraw>balance){
+            System.out.println("Amount required");
+        }
+    }
+    catch(ArithmeticException e)
+            {
+                System.out.println("no required amount");
+            }
+    }
+    void deposit()
+    {
+        count=0;
+        count=count+1;
+        try
+        {
+            if(count>5)
+            {
+             System.out.println("Amount required");   
+            }
+        }
+            catch(ArithmeticException e)
+            {
+                System.out.println("Transaction amount exceeds");
+            }
+    }
+ public static void main(String args[])
+    {
+        Bank1 b=new Bank1();
+      for(int ch=0;ch>5;ch++){
+          System.out.println("enter the choice:");
+      Scanner sc=new Scanner(System.in);
+      ch=sc.nextInt();
+         switch(ch)
+          {
+              case 1:
+                  b.getdata();
+                  break;
+              case 2:
+                  b.deposit();
+                  break;
+              case 3:
+                  b.withdrawal();
+                  break;
+              case 4:
+                  break;
+         }
+      }
+    }
+}
+
+ 

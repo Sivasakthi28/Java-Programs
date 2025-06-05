@@ -1,0 +1,24 @@
+6. Capitalize First Letter of Each Word
+Problem: Capitalize the first letter of every word in a sentence.
+Input Format: A sentence (multiple words)
+Output Format: Sentence with each word capitalized
+Constraints: Input contains only lowercase letters and spaces
+Sample Input:
+java is fun
+Sample Output:
+Java Is Fun
+
+package Sakthi;
+import java.util.Scanner;
+public class Hello {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String line = sc.nextLine();
+        String result = "";
+        String[] words = line.split(" ");
+        for (String word : words) {
+             result += word.substring(0, 1).toUpperCase() + word.substring(1) + " ";
+        }
+        System.out.println(result.trim());
+    }
+}

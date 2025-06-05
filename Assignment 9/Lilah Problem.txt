@@ -1,0 +1,22 @@
+package Sakthi;
+import java.util.Scanner;
+public class Hello{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.next();  
+        long n=sc.nextLong();    
+        long count=0;
+        for(int i=0;i<s.length();i++) {
+            if(s.charAt(i)=='a') {
+                count++;
+            }
+        }
+        long total=(n/s.length())*count;
+        for(int i=0;i<n%s.length();i++) {
+            if(s.charAt(i)=='a') {
+                total++;
+            }
+        }
+        System.out.println(total);  
+    }
+}

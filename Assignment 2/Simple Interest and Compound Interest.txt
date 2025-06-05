@@ -1,0 +1,30 @@
+3. Simple Interest or Compound Interest Calculator 
+Input: User chooses 1 for Simple Interest, 2 for Compound Interest 
+Take input for P (principal), R (rate), T (time) 
+Output: Display the calculated interest
+
+package Sakthi;
+import java.util.*;
+class Hello {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int p=sc.nextInt();
+        int r=sc.nextInt();
+        int t=sc.nextInt();
+        int n=sc.nextInt();
+        switch(n) {
+        case 1:
+            int SI=(p*r*t)/100;
+            System.out.println(SI);
+            break;
+        case 2:
+            double a=p*Math.pow((1+(r/100.0)),t);
+            double CI=a-p;
+            System.out.println(CI);
+            break;
+        default:
+        	System.out.println("Invalid");
+        }
+    }
+}
+

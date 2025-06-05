@@ -1,0 +1,21 @@
+4. Reverse a String Using StringBuilder
+Problem: Reverse the input string using StringBuilder.
+Input Format: A single string
+Output Format: Reversed string
+Constraints: 1 &lt;= length &lt;= 1000
+Sample Input:
+Hello
+Sample Output:
+olleH
+
+package Sakthi;
+import java.util.*;
+class Hello {
+    public static void main(String[] args) {
+    	Scanner sc=new Scanner(System.in);
+    	String str=sc.nextLine();
+        StringBuilder sb=new StringBuilder();
+        sb.append(str);
+		System.out.println(sb.reverse().toString());
+    }
+}

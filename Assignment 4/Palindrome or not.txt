@@ -1,0 +1,28 @@
+1. Palindrome Check
+Problem: Check if a string is a palindrome.
+Input Format: A single string (no spaces)
+Output Format: &quot;Palindrome&quot; or &quot;Not Palindrome&quot;
+Constraints: 1 &lt;= length &lt;= 1000
+Sample Input:
+madam
+Sample Output:
+Palindrome
+
+package Sakthi;
+import java.util.*;
+class Hello {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String str1=sc.nextLine();
+		String str2="";
+		for(int i=0;i<str1.length();i++) {
+			str2=str1.charAt(i)+str2;
+		}
+		if(str1.equals(str2)) {
+			System.out.println("Palindrome");
+		}
+		else {
+			System.out.println("Not a Palindrome");
+		}
+	}
+}

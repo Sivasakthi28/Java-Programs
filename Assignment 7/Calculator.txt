@@ -1,0 +1,19 @@
+package Sakthi;
+public class Calculator {
+    int result;
+    static int operationCount;
+    public void add(int a,int b) {
+    	int add=a+b;
+    	operationCount++;
+    	System.out.println(add);
+    }
+    static void displayOperationCount() {
+    	System.out.println("Number of Operations to be performed: "+operationCount);
+    }
+	public static void main(String[] args) {
+		Calculator obj=new Calculator();
+		obj.add(2,8);
+		obj.displayOperationCount();
+	}
+
+}

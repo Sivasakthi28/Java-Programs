@@ -1,0 +1,18 @@
+package Sakthi;
+public class BankAccount {
+	private int balance=0;
+	void deposit() {
+		balance=balance+100;
+		System.out.println("Deposited");
+	}
+	void getBalance() {
+		System.out.println("Balance: "+balance);
+	}
+	class bank{
+	public static void main(String[] args) {
+	     BankAccount obj=new BankAccount();
+	     obj.deposit();
+	     obj.getBalance();
+	}
+	}
+}

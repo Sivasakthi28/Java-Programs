@@ -1,0 +1,29 @@
+8. Toggle Case
+Problem: Convert lowercase letters to uppercase and vice versa.
+Input Format: A single string
+Output Format: The toggled string
+Constraints: Input contains only alphabetic characters
+Sample Input:
+HeLLo
+Sample Output:
+hEllO
+
+package Sakthi;
+import java.util.Scanner;
+public class Hello {
+   public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      String s = sc.nextLine();
+      String res = "";
+      for (int i = 0; i < s.length(); i++) {
+          char c = s.charAt(i);
+          if (c >= 'A' && c <= 'Z') {
+              res += (char)(c + 32);
+          } 
+          else {
+              res += (char)(c - 32);
+          }
+      }
+      System.out.println(res);
+   }
+}

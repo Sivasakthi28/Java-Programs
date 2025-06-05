@@ -1,0 +1,28 @@
+7. Count Word Occurrences
+Problem: Count how many times a given word appears in the sentence.
+Input Format: First line: Sentence
+Second line: Word to search
+Output Format: An integer (count)
+Constraints: Case-sensitive match
+Sample Input:
+Java is simple. Java is powerful.\nJava
+Sample Output:
+2
+
+package Sakthi;
+import java.util.Scanner;
+public class Hello {
+ public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      String sentence = sc.nextLine();
+      String word = sc.nextLine();
+      String[] words = sentence.split(" ");
+      int count = 0;
+      for (String w : words) {
+          if (w.equals(word)) {
+          count++;
+          }
+      }
+   System.out.println(count);
+ }
+}

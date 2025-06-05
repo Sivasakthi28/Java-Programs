@@ -1,0 +1,26 @@
+3. Bitwise Operator Experiment
+Problem:
+Create a program that reads two integer numbers from the user. Perform the following
+bitwise operations and print the results:
+• AND
+• OR
+• XOR
+• Left Shift (both numbers by 2 bits)
+• Right Shift (both numbers by 2 bits)
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int c= a&b, d=a|b, e=a^b, f= a<<2, g=b<<2, h=a>>2, i=b>>2;
+        System.out.println("AND: "+c);
+        System.out.println("OR: "+d);
+        System.out.println("XOR: "+e);
+        System.out.println("a << 2: "+f);
+        System.out.println("b << 2: "+g);
+        System.out.println("a >> 2: "+h);
+        System.out.println("b >> 2: "+i);
+    }
+}

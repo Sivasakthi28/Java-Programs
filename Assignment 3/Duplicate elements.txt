@@ -1,0 +1,48 @@
+2.Duplicate Elements
+Problem Statement:
+Write a program to identify and print all duplicate elements in a 1D array. If no duplicates
+are found, print &quot;No duplicates&quot;.
+Input:
+• First line: Integer n (number of elements)
+• Second line: n space-separated integers
+Output:
+• All duplicate elements (in any order)
+• Or &quot;No duplicates&quot; if all elements are unique
+Constraints:
+• 1 &lt;= n &lt;= 100
+• -10^4 &lt;= arr[i] &lt;= 10^4
+Sample Input:
+7
+5 3 8 5 6 3 2
+Sample Output:
+5 3
+
+package Sakthi;
+import java.util.Scanner;
+public class Hello {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt(); 
+        int[] arr=new int[n];
+        for(int i=0;i<n;i++) {
+            arr[i]=sc.nextInt();
+        }
+        for(int i=0;i<n;i++) {
+            boolean found=false;
+            for(int j=0;j<i;j++) {
+                if(arr[i]==arr[j]) {
+                    found=true;
+                    break;
+                }
+            }
+            if(!found) {
+                for(int k=i+1;k<n;k++) {
+                    if(arr[i]==arr[k]) {
+                        System.out.print(arr[i] + " ");
+                        break;
+                    }
+                }
+            }
+        }
+    }
+}

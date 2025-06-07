@@ -1,0 +1,79 @@
+import java.util.Scanner;
+class Node {
+   int data;
+   Node prev, next;
+   Node(int d) { data = d; }
+}
+class SimpleDLL {
+   Node head = null;
+   void insertEnd(int data) {
+      Node n = new Node(data);
+      if (head == null) head = n;
+      else {
+         Node temp = head;
+         while (temp.next != null) temp = temp.next;
+              temp.next = n;
+              n.prev = temp;
+         }
+      }
+      void insertBegin(int data) {
+         Node n = new Node(data);
+         n.next = head;
+         if (head != null) head.prev = n;
+         head = n;
+      }
+      void insertAt3(int data) {
+         Node n = new Node(data);
+         Node temp = head;
+         for (int i = 1; i < 2 && temp != null; i++) temp = temp.next;
+         if (temp != null && temp.next != null) {
+            n.next = temp.next;
+            n.prev = temp;
+            temp.next.prev = n;
+            temp.next = n;
+        }
+      }
+      void deleteFirst() {
+         if (head != null) head = head.next;
+         if (head != null) head.prev = null;
+      }
+      void deleteLast() {
+      if (head == null || head.next == null) head = null;
+      else {
+         Node temp = head;
+         while (temp.next != null) temp = temp.next;
+         temp.prev.next = null;
+      }
+      }
+      void deleteAt3() {
+         Node temp = head;
+         for (int i = 1; i < 3 && temp != null; i++) temp = temp.next;
+         if (temp != null && temp.prev != null && temp.next != null) {
+         temp.prev.next = temp.next;
+         temp.next.prev = temp.prev;
+      }
+      }
+      void display() {
+         Node t = head;
+         while (t != null) {
+         System.out.print(t.data + " ");
+         t = t.next;
+      }
+      System.out.println();
+    }
+}
+public class Main{
+ public static void main(String[] args) {
+ Scanner sc = new Scanner(System.in);
+ SimpleDLL dll = new SimpleDLL();
+ System.out.print("Enter number of nodes: ");
+ int n = sc.nextInt();
+ for (int i = 0; i < n; i++)
+ dll.insertEnd(sc.nextInt());
+ dll.insertBegin(100); 
+ dll.insertEnd(999); 
+ dll.deleteFirst(); 
+ dll.deleteLast(); 
+ dll.deleteAt3(); 
+ dll.display(); 
+}

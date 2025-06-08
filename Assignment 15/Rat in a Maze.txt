@@ -1,0 +1,30 @@
+package Sakthi;
+class Solution {
+    public List<String> findPath(int[][] maze, int n) {
+        List<String> result=new ArrayList<>();
+        boolean[][] visited=new boolean[n][n];
+        if(maze[0][0]==1)
+            solve(0,0,maze,n,"",result,visited);
+        return result;
+    }
+    void solve(int x,int y,int[][] maze,int n,String path,List<String> result,boolean[][] visited) {
+        if(x==n-1 && y==n-1) {
+            result.add(path);
+            return;
+        }
+        visited[x][y]=true;
+        int[] dx={1,0,0,-1};
+        int[] dy={0,-1,1,0};
+        char[] move={'D','L','R','U'};
+        for (int i=0;i<4;i++) {
+            int newX=x+dx[i],newY=y+dy[i];
+            if(isSafe(newX,newY,maze,visited,n)) {
+                solve(newX,newY,maze,n,path+move[i],result,visited);
+            }
+        }
+        visited[x][y]=false; 
+    }
+    boolean isSafe(int x,int y,int[][] maze,boolean[][] visited,int n) {
+        return x>=0 && y>=0 && x<n && y<n && maze[x][y]==1 && !visited[x][y];
+    }
+}

@@ -1,0 +1,25 @@
+package Sakthi;
+class Solution {
+    public List<String> letterCombinations(String digits) {
+        if (digits.isEmpty()){ 
+             return new ArrayList<>();
+        }
+        String[] mapping={
+            "",     "",     "abc",  "def",  "ghi",
+            "jkl",  "mno",  "pqrs", "tuv",  "wxyz"
+        };
+        List<String> result=new ArrayList<>();
+        backtrack(0,digits,"",mapping,result);
+        return result;
+    }
+    void backtrack(int index,String digits,String path,String[] mapping,List<String> result) {
+        if(index==digits.length()) {
+            result.add(path);
+            return;
+        }
+        String letters=mapping[digits.charAt(index)-'0'];
+        for(char c : letters.toCharArray()) {
+            backtrack(index+1,digits,path+c,mapping,result);
+        }
+    }
+}

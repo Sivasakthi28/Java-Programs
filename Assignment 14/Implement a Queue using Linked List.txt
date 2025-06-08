@@ -1,0 +1,60 @@
+ 2. Implement a Queue using Linked List
+Problem:
+ Write a program to implement a queue using linked list with enqueue and dequeue operations.
+
+public class LinkedListQueue {
+    private static class Node {
+        int data;
+        Node next;
+        Node(int value) {
+            this.data = value;
+            this.next = null;
+        }
+    }
+    private Node front = null;  
+    private Node rear = null;  
+    public void enqueue(int value) {
+        Node newNode = new Node(value);
+        if (rear == null) {
+            front = rear = newNode;
+        } else {
+            rear.next = newNode;
+            rear = newNode;
+        }
+    }
+    public void dequeue() {
+        if (front == null) {
+            System.out.println("Queue Underflow: Cannot dequeue from empty queue");
+            return;
+        }
+
+        front = front.next;
+        if (front == null) {
+            rear = null;
+        }
+    }
+    public void display() {
+        if (front == null) {
+            System.out.println("Queue is empty");
+            return;
+        }
+        Node temp = front;
+        System.out.print("Queue elements: ");
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+    public static void main(String[] args) {
+        LinkedListQueue queue = new LinkedListQueue();
+        queue.enqueue(10);
+        queue.enqueue(20);
+        queue.enqueue(30);
+        queue.display();
+        queue.dequeue();
+        queue.display();
+        queue.enqueue(40);
+        queue.display(); 
+    }
+}
